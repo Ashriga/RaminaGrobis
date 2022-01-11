@@ -12,19 +12,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/da7397688c.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+<?php 
+# Variable qui vérifie le statut de l'utilisateur (admin ou user normal).
+$isAdmin = false;
+?>
+
 <header id="header">
-    <h1 class="title">Ramina Grobis</h1>
+    <div class="div-title-logo">
+        <i class="fad fa-cat"></i>
+        <h1 class="title">Ramina Grobis</h1>
+    </div>
 
     <!-- Nav pour les différentes pages/ancres -->
     <nav class="nav-header">
-        <li class="list-header"><a class="link-list-header" href="#">Shop</a></li>
-        <li class="list-header"><a class="link-list-header" href="#">Connexion</a></li>
-        <li class="list-header"><a class="link-list-header" href="#">Inscription</a></li>
-        <li class="list-header"><a class="link-list-header" href="#">Informations</a></li>
+        <li class="list-header"><a id="btn-footer" class="link-list-header" href="#">Informations</a></li>
+        <li class="list-header"><a id="btn-connexion" class="link-list-header" href="#">Connexion</a></li>
     </nav>
 </header>
 
 <div class="background-image">
+
