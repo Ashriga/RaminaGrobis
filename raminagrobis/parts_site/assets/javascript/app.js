@@ -50,7 +50,12 @@ btnConnexion.addEventListener("click", () => {
 overlayConnexion.addEventListener("dblclick", () => {
     // Fonction pour faire disparaitre le formulaire de connexion
     overlayConnexion.classList.add("hidden");
-
+    if (homeCard.classList.contains("verified")) {
+        homeCard.classList.remove("hidden");
+    }
     homeHero.classList.remove("hidden");
-    homeCard.classList.remove("hidden");
 })
+
+// Faire une fonction pour faire apparaitre le "Créer son Event"
+// Valider la class verified si la personne se connecte en tant qu'admin 
+// Création fonction addVerified en php avec une balise script. 
