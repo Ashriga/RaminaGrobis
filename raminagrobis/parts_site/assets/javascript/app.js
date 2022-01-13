@@ -28,3 +28,29 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
+// ------------------------- OVERLAY CONNEXION ------------------------------
+
+const overlayConnexion = document.getElementById("overlay-connexion");
+const homeHero = document.getElementById("home-hero");
+const homeCard = document.getElementById("home-card");
+const btnConnexion = document.getElementById("btn-connexion");
+
+btnConnexion.addEventListener("click", () => {
+    // Fonction pour faire apparaitre le form de connexion
+    homeHero.classList.add("hidden");
+    homeCard.classList.add("hidden");
+
+    overlayConnexion.classList.remove("hidden");
+})
+
+
+// Attention ne pas dblclick rapidement sur le formulaire, cela l'enlèverait.
+
+overlayConnexion.addEventListener("dblclick", () => {
+    // Fonction pour faire disparaitre le formulaire de connexion
+    overlayConnexion.classList.add("hidden");
+
+    homeHero.classList.remove("hidden");
+    homeCard.classList.remove("hidden");
+})
