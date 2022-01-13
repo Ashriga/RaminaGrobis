@@ -28,7 +28,7 @@ include "header.php";
 
 <!-- Seulement si Admin -->
 
-<section id="home-card" class="section-lp">
+<section id="home-card" class="section-lp hidden">
     <div class="container">
         <div class="container-card">
             <div class="card">

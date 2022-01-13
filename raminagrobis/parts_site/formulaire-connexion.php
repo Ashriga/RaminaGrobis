@@ -4,27 +4,30 @@
 -->
 
 
-<div class="grey-overlay hidden">
+<div class="grey-overlay hidden" id="overlay-connexion">
 
-    <!-- Div contenant titre et formulaire -->
-    <div class="border-formulaire-connexion">
+    <div class="section-form-connexion">
+        <!-- Div contenant titre et formulaire -->
+        <div class="border-formulaire-connexion">
 
-        <h2 class="form-title">Formulaire de connexion</h2>
+            <h2 class="form-title">Sign In</h2>
 
-        <form action="#" method="get">
-            <div class="div-input-label">   
-                <label for="username-connexion">Username : </label>
-                <input type="text" name="username-connexion" id="username-connexion">
-            </div>
+            <form action="#" method="get" class="form-connexion">
+                <div class="div-input-label">   
+                    <label for="username-connexion">Username : </label>
+                    <input type="text" name="username-connexion" id="username-connexion">
+                </div>
 
-            <div class="div-input-label">
-                <label for="password-connexion">Password : </label>
-                <input type="password" name="password-connexion" id="password-connexion">
-            </div>
+                <div class="div-input-label">
+                    <label for="password-connexion">Password : </label>
+                    <input type="password" name="password-connexion" id="password-connexion">
+                </div>
 
-            <input type="submit" value="Confirmer" id="submit-connexion" class="btn-submit">
-        </form>
+                <input type="submit" value="Confirmer" id="submit-connexion" class="btn-submit">
+            </form>
+        </div>
     </div>
+
 
     
 </div>

@@ -7,14 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $title ?></title>
 
-    <script src="https://kit.fontawesome.com/da7397688c.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="assets/css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/da7397688c.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -25,8 +23,8 @@ $isAdmin = false;
 
 <header id="header">
     <div class="div-title-logo">
-        <i class="fad fa-cat"></i>
-        <a href="index.php"><h1 class="title">Ramina Grobis</h1></a>
+        <a href="index.php"><i class="fad fa-cat"></i></a>
+        <h1 class="title">Ramina Grobis</h1>
     </div>
 
     <!-- Nav pour les différentes pages/ancres -->

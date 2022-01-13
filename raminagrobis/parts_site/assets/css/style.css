@@ -2,7 +2,6 @@
     --color-header-onscroll: #F7F7F7;
 }
 
-
 body {
     box-sizing: border-box;
     padding: 0;
@@ -21,10 +20,10 @@ header {
     width: 100%;
     align-items: center;
     justify-content: space-around;
-    z-index: 10000;
+    z-index: 100;
     position: fixed;
     top: 0;
-    background-color: rgba(26, 26, 26, 0.904);
+    background-color: rgba(32, 32, 32, 0.904);
     color: rgb(139, 137, 137);
     transition: all 0.6s ease-in-out;
 }
@@ -34,6 +33,16 @@ header {
     color: var(--color-header-onscroll);
     text-decoration: none;
     border-bottom: solid 1px var(--color-header-onscroll);
+}
+
+.div-title-logo {
+    display: flex;
+    align-items: center;
+}
+
+.fa-cat {
+    font-size: 4.7rem;
+    color: rgb(143, 143, 143);
 }
 
 .title {
@@ -87,6 +96,82 @@ header {
     background-size: cover;
     background-attachment: scroll;
     padding: 8vh 0 0 0;
+}
+
+/* ------------ Formulaire-connexion ------------ */
+
+.grey-overlay {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1000;
+    position: fixed;
+    background-color: rgba(65, 62, 62, 0.774);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-form-connexion {
+    height: 70%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.border-formulaire-connexion {
+    width: 30%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    background-color: rgba(182, 182, 182, 0.493);
+}
+
+.form-title {
+    border-bottom: solid 3px black;
+}
+
+.form-connexion {
+    height: 50%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div-input-label {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    font-size: 1.5rem;
+}
+
+.div-input-label input {
+    padding: 4px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+}
+
+.btn-submit {
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    box-shadow: -1px -1px 2px;
+    transition: all ease-in 2s;
+}
+
+.btn-submit:hover {
+    box-shadow: -2px -2px 2px;
+    color: #FFF;
+    border: solid #FFF 1px;
+    background-color: #343232;
 }
 
 /* ------------ Sections ------------ */
@@ -157,7 +242,7 @@ header {
     border-radius: 5px;
     padding: 5px 7px;
     box-shadow: -1px -1px 2px;
-    transition: all ease-in 3s;
+    transition: all ease-in 2s;
 }
 
 .link-btn:hover {
@@ -167,5 +252,6 @@ header {
     background-color: #343232;
 }
 
-
-
+.hidden {
+    display: none;
+}
