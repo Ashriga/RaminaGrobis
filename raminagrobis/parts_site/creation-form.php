@@ -3,8 +3,6 @@
 // création d'un titre de page
 $title = "Ramina Grobis lp";
 
-include "formulaire-connexion.php";
-include "information.php";
 
 
 include "header.php";

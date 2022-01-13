@@ -9,5 +9,17 @@ $requete->execute();
 
 $lines = $requete->fetchAll();
 
+$filename = 'event_subscription.csv';
+
+file_put_contents(
+    $filename,
+    $lines,
+    $flags = 0,
+    $context = null);
+
+?>
+
+<a href="event_subscrption.csv">TELECHARGER EN FORMAT CSV</a>
+
 
 
