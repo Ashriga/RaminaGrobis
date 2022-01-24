@@ -12,7 +12,7 @@
 
             <h2 class="form-title">Sign In</h2>
 
-            <form action="#" method="get" class="form-connexion">
+            <form action="#" method="post" class="form-connexion">
                 <div class="div-input-label">   
                     <label for="username-connexion">Username : </label>
                     <input type="text" name="username-connexion" id="username-connexion">
@@ -24,10 +24,12 @@
                 </div>
 
                 <input type="submit" value="Confirmer" id="submit-connexion" class="btn-submit">
+
+                <?php 
+                //TODO : Condition PhP pour ensuite mettre la fonction js verified
+                ?>
             </form>
         </div>
     </div>
-
-
     
 </div>

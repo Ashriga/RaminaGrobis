@@ -1,5 +1,8 @@
 :root {
     --color-header-onscroll: #F7F7F7;
+
+    /* Variables spéciales */
+
 }
 
 body {
@@ -254,4 +257,11 @@ header {
 
 .hidden {
     display: none;
+}
+
+/* -------- Formulaire création -------- */
+
+.formulaire-creation {
+    background-color: red;
+    width: 100wh;
 }

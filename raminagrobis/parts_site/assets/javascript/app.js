@@ -59,3 +59,7 @@ overlayConnexion.addEventListener("dblclick", () => {
 // Faire une fonction pour faire apparaitre le "Créer son Event"
 // Valider la class verified si la personne se connecte en tant qu'admin 
 // Création fonction addVerified en php avec une balise script. 
+
+function homeCardVerification() {
+    homeCard.classList.add("verified");
+}
