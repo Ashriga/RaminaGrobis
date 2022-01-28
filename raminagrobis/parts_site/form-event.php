@@ -82,7 +82,7 @@ include "header.php";
                 <label for="newsletter">Newsletter</label>
         </div>
 
-        <input type="submit" value="Envoyer">
+        <input type="submit" value="Envoyer" class="btn-submit">
 </form>
 
 
