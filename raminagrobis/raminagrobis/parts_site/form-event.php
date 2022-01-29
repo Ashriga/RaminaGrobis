@@ -1,7 +1,7 @@
 <?php
 
 // création d'un titre de page
-$title = "Admin creation form";
+$title = "Ramina Grobis lp";
 
 include "formulaire-connexion.php";
 include "information.php";
@@ -10,7 +10,9 @@ include "information.php";
 include "header.php";
 ?>
 
-<!-- Modifier le form pour que ce soit u qui crée un event. -->
+<!-- formulaire en alpha pour test -->
+        
+<h2 class="form-title">Sign In</h2>
 
 <form class="formulaire-creation" action="#" method="post">
         <div class="div-input-label"> 
@@ -85,6 +87,9 @@ include "header.php";
 
 
 
-<?php 
-include "footer.php"
+
+
+
+<?php
+include "footer.php";
 ?>
