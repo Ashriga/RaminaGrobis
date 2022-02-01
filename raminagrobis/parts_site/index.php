@@ -1,13 +1,11 @@
 <?php
-
 // création d'un titre de page
 $title = "Ramina Grobis lp";
 
+include "header.php";
+
 include "formulaire-connexion.php";
 include "information.php";
-
-
-include "header.php";
 ?>
 
 
@@ -28,7 +26,7 @@ include "header.php";
 
 <!-- Seulement si Admin -->
 
-<section id="home-card" class="section-lp hidden">
+<section id="home-card" class="section-lp">
     <div class="container">
         <div class="container-card">
             <div class="card">

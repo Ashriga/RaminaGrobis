@@ -1,8 +1,10 @@
 :root {
     --color-header-onscroll: #F7F7F7;
 
-    /* Variables spéciales */
+    --primary-scroll: #2e2e39;
+    --secondary-scroll: #746f6c;
 
+    /* Variables spéciales */
 }
 
 body {
@@ -10,6 +12,21 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-scroll);
+    border-radius: 33px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--secondary-scroll);
+    border-radius: 33px;
+}
+
+body::-webkit-scrollbar {
+    border-radius: 50px;
+    width: 7px;
 }
 
 a {
@@ -98,7 +115,7 @@ header {
     background-image: url("../image/background/background-lp.jpg");
     background-size: cover;
     background-attachment: scroll;
-    padding: 8vh 0 0 0;
+    padding: 9vh 0 0 0;
 }
 
 /* ------------ Formulaire-connexion ------------ */
@@ -257,13 +274,116 @@ header {
 
 .hidden {
     display: none;
+} 
+
+/* -------- Cards Event -------- */
+
+.event-section {
+    background-color: rgba(218,218,218,0.4);
 }
 
-/* -------- Formulaire création -------- */
+
+.container-section-event {
+    background-color: rgba(110, 110, 110, 0.774);
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    min-height: 40vh;
+    margin: 0 auto;
+    padding: 10px 0px;
+}
+
+.container-card-event {
+    width: 20%;
+    height: 30vh;
+    padding: 20px 40px;
+}
+
+.card-event {
+    border: solid 1px black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.card-event h3 {
+    border-bottom: solid 1px black;
+    width: 100%;
+    text-align: center;
+}
+
+.image-selected {
+    max-height: 70%;
+    margin: 0 16px;
+}
+
+.card-event p {
+    padding: 0 10px;
+    text-align: justify;
+    overflow-y: auto;
+    max-height: 100%;
+    margin: 0%;
+}
+
+.card-event p::-webkit-scrollbar-thumb {
+    background-color: var(--primary-scroll);
+    border-radius: 33px;
+}
+
+
+.card-event p::-webkit-scrollbar-track {
+    background-color: var(--secondary-scroll);
+    border-radius: 33px;
+}
+
+.card-event p::-webkit-scrollbar {
+    border-radius: 50px;
+    width: 7px;
+}
+
+/* -------- Formulaire Creation -------- */
 
 .formulaire-creation {
     background-color: rgba(218,218,218,0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    width: 100wh;
+    height: 60vh;
+}
+
+.formulaire-creation .div-input-label {
+    width: 40%;
+}
+
+.formulaire-creation .div-input-label input {
+    border: solid 2px rgba(28, 26, 145, 0.664);
+}
+
+.formulaire-creation .div-input-label:first-child input {
+    border: none;
+}
+
+.formulaire-creation:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulaire-creation textarea {
+    padding: 4px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    border: solid 2px rgba(28, 26, 145, 0.664);
+
+}
+
+.title-creation-form {
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: underline rgb(48, 46, 46);
+    color: rgba(28, 26, 145, 0.664);
 }
