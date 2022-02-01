@@ -1,6 +1,7 @@
 const headerAnim = document.getElementById("header");
 const listNavHeader = document.querySelectorAll(".link-list-header");
 const siteName = document.querySelector(".title");
+const bgImage = document.getElementById("bgimage");
 
 window.addEventListener("scroll", () => {
 
@@ -42,6 +43,7 @@ btnConnexion.addEventListener("click", () => {
     homeCard.classList.add("hidden");
 
     overlayConnexion.classList.remove("hidden");
+    bgImage.style.padding = "0";
 })
 
 
@@ -54,6 +56,7 @@ overlayConnexion.addEventListener("dblclick", () => {
         homeCard.classList.remove("hidden");
     }
     homeHero.classList.remove("hidden");
+    bgImage.style.padding = "9vh 0 0 0";
 })
 
 // Faire une fonction pour faire apparaitre le "Créer son Event"
