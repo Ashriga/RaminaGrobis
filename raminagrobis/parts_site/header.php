@@ -35,5 +35,5 @@ $isAdmin = false;
     </nav>
 </header>
 
-<div class="background-image">
+<div class="background-image" id="bgimage">
 
