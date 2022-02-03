@@ -34,9 +34,6 @@ $requete->bindParam(":form_title", $form_title);
 $requete->bindParam(":img", $img);
 $requete->bindParam(":color", $color);
 
-
-
-
 //execution de la requete
 $requete->execute();
 
