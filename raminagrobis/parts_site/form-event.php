@@ -20,6 +20,8 @@ $requete->execute();
 //recuperer le resultat sous forme d'un tableau
 $activity_sector_by_event = $requete->fetchAll();
 
+var_dump($activity_sector_by_event);
+
 $requete->execute();
 
 $requete = $pdo->prepare("select * from activity_sector");
@@ -75,8 +77,9 @@ $activity_sector = $requete->fetchAll();
                 <option value="">Veuillez selectionner une option</option>
                 <?php
                     foreach ($activity_sector_by_event as $acbe){
+
                        ?>
-                        <option value="<?php echo $activity_sector[$acbe[1]]['name']?>"><?php echo $activity_sector[$acbe[1]]['name']?></option>
+                        <option value="<?php echo $activity_sector[$acbe[1]-1]['name']?>"><?php echo $activity_sector[$acbe[1]-1]['name']?></option>
                         <?php
                     }
                 ?>

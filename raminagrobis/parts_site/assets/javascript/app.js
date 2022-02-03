@@ -68,7 +68,6 @@ overlayConnexion.addEventListener("dblclick", () => {
 
 submitConnexion.addEventListener("click", () => {
 
-
     const listInputConnexionAdmin = document.querySelectorAll(".input-connexion");
 
     usernameConnexion = listInputConnexionAdmin[0].innerHTML

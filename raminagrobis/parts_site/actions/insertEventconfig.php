@@ -11,7 +11,7 @@ $img = filter_input(INPUT_POST, "img");
 $color = filter_input(INPUT_POST, "color");
 //$activity_sector=filter_input(INPUT_POST, "activity_sector");
 
-$i = 0;
+$i = 1;
 
 foreach ($_POST["activity_sector"] as $activity_sector) {
     var_dump($activity_sector);
