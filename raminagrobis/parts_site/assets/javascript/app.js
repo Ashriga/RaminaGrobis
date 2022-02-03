@@ -83,7 +83,24 @@ submitConnexion.addEventListener("click", () => {
 
 })
 
-//}
 
 
 
+// On modifie le form si la personne est un pro du milieu ou non.
+
+const isPro = document.querySelector("#is-professional");
+const ifIsPro = document.querySelectorAll(".div-input-pro");
+
+isPro.addEventListener("click",() => {
+
+    if (isPro.checked === true) {
+        ifIsPro.forEach(c => {
+            c.classList.remove("hidden");
+        })
+
+    } else {
+        ifIsPro.forEach(c => {
+            c.classList.add("hidden");
+        })
+    }
+})
