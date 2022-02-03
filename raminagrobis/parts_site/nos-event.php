@@ -25,8 +25,8 @@ $events = $requete->fetchAll();
         <?php
             foreach ($events as $e){
         ?>
-        <div class="container-card-event" >
-            <div class="card-event" >
+        <div class="container-card-event" ">
+            <div class="card-event" style="background-color: <?php echo $e['color']?>">
                 <h3 class="card-title-event"><?php echo $e['title'] ?></h3>
                 <div class="image-selected" >
                     <p><?php echo $e['description']?></p>
