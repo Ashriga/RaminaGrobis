@@ -18,8 +18,8 @@ include "header.php";
 
     <form class="formulaire-creation" action="actions/insertSubscription.php" method="post">
         <div class="div-input-label">
-            <label for="civilite">Civilité : </label>
-            <select name="sex" id="civilite">
+            <label for="sex">Civilité : </label>
+            <select name="sex" id="sex">
                 <option value="Homme">Homme</option>
                 <option value="Femme">Femme</option>
                 <option value="Autre">Autre</option>
@@ -69,7 +69,7 @@ include "header.php";
         </div>
 
         <div class="div-input-label">
-            <input type="checkbox" name="rgpd" id="rgpd" required>
+            <input type="checkbox" name="consent_data" id="consent_data" required>
             <label for="rgpd">RGPD</label>
         </div>
 
@@ -78,7 +78,7 @@ include "header.php";
             <label for="newsletter">Newsletter</label>
         </div>
 
-        <input type="hidden" value="<?php echo $id?>" name="'">
+        <input type="hidden" value="<?php echo $id?>" name="event_id">
         <input type="submit" value="Envoyer" class="btn-submit">
     </form>
 

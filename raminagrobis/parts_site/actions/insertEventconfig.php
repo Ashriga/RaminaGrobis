@@ -18,9 +18,14 @@ include_once "../config.php";
 //initialisation de la connexion a la base de donnee
 $pdo = new PDO("mysql:host=" . Config::SERVEUR . ";dbname=" . Config::BDD, Config::USERNAME, Config::PASSWORD);
 
+
+
 //preparation de la requete
-$requete = $pdo->prepare("insert into subscription (title, description, form_title, img, color) 
+//$requete = $pdo->prepare("insert into event (color) values (:color)");
+$requete = $pdo->prepare("insert into event (title, description, form_title, img, color)
                                 values (:title, :description, :form_title, :img, :color)");
+
+
 
 //assignation des variables aux valeurs => pour eviter les injections SQL
 $requete->bindParam(":first_name", $first_name);
@@ -30,7 +35,9 @@ $requete->bindParam(":img", $img);
 $requete->bindParam(":color", $color);
 
 
+
+
 //execution de la requete
 $requete->execute();
 
-header("location: ../index.php");
+//header("location: ../index.php");

@@ -13,11 +13,11 @@ include "header.php";
 <!-- Modifier le form pour que ce soit u qui crée un event. -->
 
 <h2 class="title-creation-form">Formulaire de création d'Évenement.</h2>
-<form class="formulaire-creation" action="#" method="post">
+<form class="formulaire-creation" action="actions/insertEventconfig.php" method="post">
 
     <div class="div-input-label">
-        <label for="image">Insérez une image :</label>
-        <input type="file" name="image" id="image">
+        <label for="img">Insérez une image :</label>
+        <input type="text" name="img" id="img">
     </div>
 
     <div class="div-input-label">
@@ -26,21 +26,34 @@ include "header.php";
     </div>
 
     <div class="div-input-label">
-        <label for="desc">Entrez une description :</label>
-        <textarea name="desc" id="desc" rows="5" cols="33">  </textarea>
+        <label for="description">Entrez une description :</label>
+        <textarea name="description" id="description" rows="5" cols="33">  </textarea>
     </div>
 
     <div class="div-input-label">
-        <label for="colors">Choisissez une couleur :</label>
-        <select name="colors" id="colors"></select>
-    </div>
-
-    <div class="div-input-label">
-        <label for="secteur">Secteur : </label>
-        <select name="secteur" id="secteur">
-        <!-- Faire une boucle php forEach pour les options de secteur. -->
+        <label for="color">Choisissez une couleur :</label>
+        <select name="color" id="color">
+            <option value=0>default</option>
+            <option value=1>yellow</option>
+            <option value=2>green</option>
+            <option value=3>red</option>
+            <option value=4>blue</option>
         </select>
     </div>
+
+<!--    <div class="div-input-label">-->
+<!--        <label for="activity_sector">Secteur : </label>-->
+<!--        <select name="activity_sector" id="activity_sector">-->
+<!--        Faire une boucle php forEach pour les options de secteur. -->
+<!--            <option value=0>default</option>-->
+<!--        </select>-->
+<!--    </div>-->
+    <div class="div-input-label">
+        <label for="form_title">Titre du formulaire : </label>
+        <input type="text"name="form_title" id="form_title">
+        <!-- Faire une boucle php forEach pour les options de secteur. -->
+    </div>
+    <input type="submit" value="Envoyer" class="btn-submit">
 
 
 </form>
