@@ -26,34 +26,27 @@ include_once "../config.php";
 $pdo = new PDO("mysql:host=" . Config::SERVEUR . ";dbname=" . Config::BDD, Config::USERNAME, Config::PASSWORD);
 
 //preparation de la requete
-//$requete=$pdo->prepare('insert into subscription (first_name) values (:first_name)');
-$requete = $pdo->prepare('insert into subscription (event_id) values (:event_id)');
-//$requete=$pdo->prepare('insert into subscription (first_name) values (:first_name)');
 
-$requete = $pdo->prepare('insert into subscription (first_name, last_name, email_adress,
-                          sex, is_professional, company_name, job, activity_sector, consent_data,
-                          newsletter, fix_num, mobile_num, group_nb, event_id)
-                          values (:first_name, :last_name, :email_adress,
-                          :sex, :is_professional, :company_name, :job, :activity_sector, :consent_data,
-                          :newsletter, :fix_num, :mobile_num, :group_nb, :event_id)');
+$requete = $pdo->prepare('insert into subscription (first_name, last_name, email_adress, sex, group_nb, mobile_num, fix_num, activity_sector, company_name, job, consent_data, newsletter, is_professional, event_id)  values (:first_name, :last_name, :email_adress, :sex, :group_nb, :mobile_num, :fix_num, :activity_sector, :company_name, :job, :consent_data, :newsletter, :is_professional, :event_id)');
+
 
 //assignation des variables aux valeurs => pour eviter les injections SQL
-//$requete->bindParam(":first_name",$first_name);
-//$requete->bindParam(":last_name",$last_name);
-//$requete->bindParam(":email_adress",$email_adress);
-//$requete->bindParam(":sex",$sex);
-//$requete->bindParam(":is_professional",$is_professional);
-//$requete->bindParam(":company_name",$company_name);
-//$requete->bindParam(":job",$job);
-//$requete->bindParam(":activity_sector",$activity_sector);
-//$requete->bindParam(":consent_data",$consent_data);
-//$requete->bindParam(":newsletter",$newsletter);
-//$requete->bindParam(":fix_num",$fix_num);
-//$requete->bindParam(":mobile_num",$mobile_num);
-//$requete->bindParam(":group_nb",$group_nb);
+$requete->bindParam(":first_name", $first_name);
+$requete->bindParam(":last_name", $last_name);
+$requete->bindParam(":email_adress", $email_adress);
+$requete->bindParam(":sex", $sex);
+$requete->bindParam(":is_professional", $is_professional);
+$requete->bindParam(":company_name", $company_name);
+$requete->bindParam(":job", $job);
+$requete->bindParam(":activity_sector", $activity_sector);
+$requete->bindParam(":consent_data", $consent_data);
+$requete->bindParam(":newsletter", $newsletter);
+$requete->bindParam(":fix_num", $fix_num);
+$requete->bindParam(":mobile_num", $mobile_num);
+$requete->bindParam(":group_nb", $group_nb);
 $requete->bindParam(":event_id", $event_id);
 
 //execution de la requete
 $requete->execute();
 var_dump($event_id);
-//header("location: ../index.php");
+header("location: ../index.php");

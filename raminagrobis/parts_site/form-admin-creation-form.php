@@ -26,18 +26,13 @@ include "information.php";
 
     <div class="div-input-label">
         <label for="description">Entrez une description :</label>
-        <textarea name="description" id="description" rows="5" cols="33">  </textarea>
+        <input type="text" name="description" id="description">
     </div>
 
     <div class="div-input-label">
-        <label for="color">Choisissez une couleur :</label>
-        <select name="color" id="color">
-            <option value=0>default</option>
-            <option value=1>yellow</option>
-            <option value=2>green</option>
-            <option value=3>red</option>
-            <option value=4>blue</option>
-        </select>
+        <input type="color" id="color" name="color"
+               value="#f6b73c">
+        <label for="body">Body</label>
     </div>
 
 <!--    <div class="div-input-label">-->

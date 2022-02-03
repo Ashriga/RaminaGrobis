@@ -20,10 +20,10 @@ include "information.php";
     <form class="formulaire-creation" action="actions/insertSubscription.php" method="post">
         <div class="div-input-label">
             <label for="sex">Civilité : </label>
-            <select name="sex" id="sex">
-                <option value="Homme">Homme</option>
-                <option value="Femme">Femme</option>
-                <option value="Autre">Autre</option>
+            <select type="text "name="sex" id="sex">
+                <option value="M">Homme</option>
+                <option value="F">Femme</option>
+                <option value="O">Autre</option>
             </select>
         </div>
         <div class="div-input-label">
@@ -36,7 +36,7 @@ include "information.php";
         </div>
         <div class="div-input-label">
             <label for="email">Email : </label>
-            <input type="email" name="email_adress" id="email">
+            <input type="text" name="email_adress" id="email">
         </div>
         <div class="div-input-label">
             <label for="group_nb">Nombre d'accompagnants : </label>
@@ -44,18 +44,19 @@ include "information.php";
         </div>
         <div class="div-input-label">
             <label for="mobile_num">Téléphone portable : </label>
-            <input type="number" name="mobile_num" id="mobile_num">
+            <input type="text" name="mobile_num" id="mobile_num">
         </div>
 
         <div class="div-input-label">
             <label for="fix_num">Téléphone fixe : </label>
-            <input type="number" name="fix_num" id="fix_num">
+            <input type="text" name="fix_num" id="fix_num">
         </div>
 
         <div class="div-input-label">
             <label for="activity_sector">Secteur d'activité : </label>
-            <select name="activity_sector" id="activity_sector">
+            <select type="text" name="activity_sector" id="activity_sector">
                 <!-- TODO: Faire une boucle php forEach pour les options de secteur. -->
+                <option value="default">default</option>
             </select>
         </div>
 
@@ -78,7 +79,10 @@ include "information.php";
             <input type="checkbox" name="newsletter" id="newsletter">
             <label for="newsletter">Newsletter</label>
         </div>
-
+        <div class="div-input-label">
+            <input type="checkbox" name="is_professional" id="is_professional">
+            <label for="is_professional">Êtes-vous un professionel ?</label>
+        </div>
         <input type="hidden" value="<?php echo $id?>" name="event_id">
         <input type="submit" value="Envoyer" class="btn-submit">
     </form>
