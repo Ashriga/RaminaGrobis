@@ -36,6 +36,9 @@ const overlayConnexion = document.getElementById("overlay-connexion");
 const homeHero = document.getElementById("home-hero");
 const homeCard = document.getElementById("home-card");
 const btnConnexion = document.getElementById("btn-connexion");
+const submitConnexion = document.getElementById("submit-connexion")
+const listInputConnexionAdmin = document.getElementById(".input-connexion");
+
 
 btnConnexion.addEventListener("click", () => {
     // Fonction pour faire apparaitre le form de connexion
@@ -63,6 +66,24 @@ overlayConnexion.addEventListener("dblclick", () => {
 // Valider la class verified si la personne se connecte en tant qu'admin 
 // Création fonction addVerified en php avec une balise script. 
 
-function homeCardVerification() {
-    homeCard.classList.add("verified");
-}
+submitConnexion.addEventListener("click", () => {
+
+
+    const listInputConnexionAdmin = document.querySelectorAll(".input-connexion");
+
+    usernameConnexion = listInputConnexionAdmin[0].innerHTML
+    passwordConnexion = listInputConnexionAdmin[1].innerHTML;
+
+    overlayConnexion.classList.add("hidden");
+
+    if (usernameConnexion == "admin" && passwordConnexion == "admin") {
+        homeCard.classList.remove("hidden");
+    }
+    homeHero.classList.remove("hidden");
+
+})
+
+//}
+
+
+

@@ -12,24 +12,25 @@
 
             <h2 class="form-title">Sign In</h2>
 
-            <form action="#" method="post" class="form-connexion">
-                <div class="div-input-label">   
-                    <label for="username-connexion">Username : </label>
-                    <input type="text" name="username-connexion" id="username-connexion">
+            <form action="actions/admin-connexion.php" method="post" class="form-connexion">
+                <div class="div-input-label">
+                    <label for="username">Username : </label>
+                    <input type="text" name="username" class=".input-connexion">
                 </div>
 
                 <div class="div-input-label">
-                    <label for="password-connexion">Password : </label>
-                    <input type="password" name="password-connexion" id="password-connexion">
+                    <label for="password">Password : </label>
+                    <input type="password" name="password" class=".input-connexion">
                 </div>
 
                 <input type="submit" value="Confirmer" id="submit-connexion" class="btn-submit">
 
-                <?php 
+                <?php
                 //TODO : Condition PhP pour ensuite mettre la fonction js verified
+
                 ?>
             </form>
         </div>
     </div>
-    
+
 </div>

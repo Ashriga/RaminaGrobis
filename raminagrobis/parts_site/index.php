@@ -26,7 +26,7 @@ include "information.php";
 
 <!-- Seulement si Admin -->
 
-<section id="home-card" class="section-lp hidden">
+<section id="home-card" class="section-lp">
     <div class="container">
         <div class="container-card">
             <div class="card">
@@ -42,5 +42,6 @@ include "information.php";
 </section>
 
 <?php
+
 include "footer.php";
 ?>
