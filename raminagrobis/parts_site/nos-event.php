@@ -1,13 +1,11 @@
 <?php
 
 // création d'un titre de page
-$title = "Nos events";
-
-include "formulaire-connexion.php";
-include "information.php";
-
+$title = "Nos events";*
 
 include "header.php";
+include "formulaire-connexion.php";
+include "information.php";
 
 include_once "config.php";
 $pdo = new PDO("mysql:host=" . Config::SERVEUR . ";dbname=" . Config::BDD, Config::USERNAME, Config::PASSWORD);

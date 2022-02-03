@@ -3,11 +3,10 @@
 // création d'un titre de page
 $title = "Admin creation form";
 
+include "header.php";
 include "formulaire-connexion.php";
 include "information.php";
 
-
-include "header.php";
 ?>
 
 <!-- Modifier le form pour que ce soit u qui crée un event. -->

@@ -5,11 +5,12 @@ $id = filter_input(INPUT_GET, "id");
 // création d'un titre de page
 $title = "Ramina Grobis lp";
 
+include "header.php";
 include "formulaire-connexion.php";
 include "information.php";
 
 
-include "header.php";
+
 ?>
 
     <!-- formulaire en alpha pour test -->
