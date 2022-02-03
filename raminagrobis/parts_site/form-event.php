@@ -47,11 +47,11 @@ $activity_sector = $requete->fetchAll();
         </div>
         <div class="div-input-label">
             <label for="last_name">Nom : </label>
-            <input type="text" name="last_name" id="last_name">
+            <input type="text" name="last_name" id="last-name">
         </div>
         <div class="div-input-label">
             <label for="first_name">Prénom : </label>
-            <input type="text" name="first_name" id="first_name">
+            <input type="text" name="first_name" id="first-name">
         </div>
         <div class="div-input-label">
             <label for="email">Email : </label>
@@ -59,21 +59,26 @@ $activity_sector = $requete->fetchAll();
         </div>
         <div class="div-input-label">
             <label for="group_nb">Nombre d'accompagnants : </label>
-            <input type="number" name="group_nb" id="group_nb">
+            <input type="number" name="group_nb" id="group-nb">
         </div>
         <div class="div-input-label">
             <label for="mobile_num">Téléphone portable : </label>
-            <input type="text" name="mobile_num" id="mobile_num">
+            <input type="text" name="mobile_num" id="mobile-num">
         </div>
 
         <div class="div-input-label">
             <label for="fix_num">Téléphone fixe : </label>
             <input type="text" name="fix_num" id="fix_num">
         </div>
-
+    <!-- Pro ? -->
         <div class="div-input-label">
+            <label for="is_professional">Êtes-vous un professionel ?</label>
+            <input type="checkbox" name="is_professional" id="is-professional">
+        </div>
+
+        <div class="div-input-label hidden div-input-pro">
             <label for="activity_sector">Secteur d'activité : </label>
-            <select name="activity_sector" id="activity_sector">
+            <select name="activity_sector" id="activity-sector">
                 <option value="">Veuillez selectionner une option</option>
                 <?php
                     foreach ($activity_sector_by_event as $acbe){
@@ -86,36 +91,41 @@ $activity_sector = $requete->fetchAll();
             </select>
         </div>
 
-        <div class="div-input-label">
+        <div class="div-input-label hidden div-input-pro">
             <label for="company_name">Nom de l'entreprise : </label>
             <input type="text" name="company_name" id="company_name">
         </div>
 
-        <div class="div-input-label">
+        <div class="div-input-label hidden div-input-pro">
             <label for="job">Métier : </label>
             <input type="text" name="job" id="job">
         </div>
 
+        <!-- ------------------- -->
+
         <div class="div-input-label">
-            <input type="checkbox" name="consent_data" id="consent_data" required>
             <label for="rgpd">RGPD</label>
+            <input type="checkbox" name="consent_data" id="consent_data" required>
         </div>
 
         <div class="div-input-label">
-            <input type="checkbox" name="newsletter" id="newsletter">
             <label for="newsletter">Newsletter</label>
+            <input type="checkbox" name="newsletter" id="newsletter">
         </div>
-        <div class="div-input-label">
-            <input type="checkbox" name="is_professional" id="is_professional">
-            <label for="is_professional">Êtes-vous un professionel ?</label>
-        </div>
+
         <input type="hidden" value="<?php echo $id?>" name="event_id">
         <input type="submit" value="Envoyer" class="btn-submit">
+
     </form>
+
 </section>
+
 <section class="container-section-event">
+
     <div class="container-section-event">
+
         <span> hey</span>
+
     </div>
 
 </section>

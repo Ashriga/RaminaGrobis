@@ -1,7 +1,7 @@
 <?php
 class Config {
     const SERVEUR="localhost";
-    const BDD="Raminagrobis";
+    const BDD="raminagrobis";
     const USERNAME="admin";
     const PASSWORD="admin";
 }
