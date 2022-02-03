@@ -1,6 +1,6 @@
 <?php
 // création d'un titre de page
-$title = "Ramina Grobis lp";
+$title = "Raminagrobis lp";
 
 include "header.php";
 

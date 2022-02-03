@@ -292,8 +292,18 @@ header {
     padding: 10px 0px;
 }
 
+.container-section-activity-sector {
+    background-color: rgba(150, 150, 150, 0.774);
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px 0px;
+    border-radius: 10px;
+}
+
 .container-card-event {
-    width: 20%;
+    width: 19%;
     padding: 20px 40px;
 }
 
@@ -305,6 +315,7 @@ header {
     justify-content: space-around;
     align-items: center;
     min-height: 40vh;
+    width: auto;
 }
 
 .card-event h3 {

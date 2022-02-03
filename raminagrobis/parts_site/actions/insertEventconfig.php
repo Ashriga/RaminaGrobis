@@ -9,7 +9,17 @@ $description = filter_input(INPUT_POST, "description");
 $form_title = filter_input(INPUT_POST, "form_title");
 $img = filter_input(INPUT_POST, "img");
 $color = filter_input(INPUT_POST, "color");
+//$activity_sector=filter_input(INPUT_POST, "activity_sector");
 
+$i = 0;
+
+foreach ($_POST["activity_sector"] as $activity_sector) {
+    var_dump($activity_sector);
+    $activity_sector_tab[$i] = $activity_sector;
+    $i++;
+}
+
+var_dump($activity_sector_tab);
 
 //recuperation du fichier de config qui contient toutes les infos de connexion a la base de donnee
 //TODO ajouter info de connexion dans la base de donnee (admin/admin)
@@ -32,5 +42,22 @@ $requete->bindParam(":color", $color);
 
 //execution de la requete
 $requete->execute();
+
+$requete = $pdo->prepare("SELECT id FROM event WHERE id = (SELECT MAX(id) FROM event)");
+
+$requete->execute();
+
+$id_last_event = $requete->fetch();
+
+var_dump($id_last_event);
+
+foreach ($activity_sector_tab as $id_activity_sector)
+{
+    $requete = $pdo->prepare("insert into activity_sector_by_event(id_event, id_activity_sector) values (:id_last_event, :id_activity_sector)");
+    $requete->bindParam(":id_last_event", $id_last_event['id']);
+    $requete->bindParam(":id_activity_sector", $id_activity_sector);
+    $requete->execute();
+}
+
 
 header("location: ../index.php");

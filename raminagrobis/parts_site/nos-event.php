@@ -25,13 +25,13 @@ $events = $requete->fetchAll();
         <?php
             foreach ($events as $e){
         ?>
-        <div class="container-card-event">
-            <div class="card-event">
+        <div class="container-card-event" >
+            <div class="card-event" >
                 <h3 class="card-title-event"><?php echo $e['title'] ?></h3>
-                <div class="image-selected">
+                <div class="image-selected" >
                     <p><?php echo $e['description']?></p>
                 </div>
-                <a href="form-event.php?id=<?php echo $e["id"] ?>" class="link-btn"><?php echo $e['form_title'] ?></a>
+                <a href="form-event.php?id=<?php echo $e["id"] ?>" class="link-btn" ><?php echo $e['form_title'] ?></a>
             </div>
         </div>
         <?php

@@ -20,7 +20,7 @@
 
                 <div class="div-input-label">
                     <label for="password">Password : </label>
-                    <input type="password" name="password" class=".input-connexion">
+                    <input type="text" name="password" class=".input-connexion">
                 </div>
 
                 <input type="submit" value="Confirmer" id="submit-connexion" class="btn-submit">

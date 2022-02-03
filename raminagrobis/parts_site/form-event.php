@@ -9,12 +9,29 @@ include "header.php";
 include "formulaire-connexion.php";
 include "information.php";
 
+include_once "config.php";
 
+$pdo = new PDO("mysql:host=" . Config::SERVEUR . ";dbname=" . Config::BDD, Config::USERNAME, Config::PASSWORD);
+
+//creation de la requete
+$requete = $pdo->prepare("select * from activity_sector_by_event where id_event=$id");
+//executer la requete
+$requete->execute();
+//recuperer le resultat sous forme d'un tableau
+$activity_sector_by_event = $requete->fetchAll();
+
+$requete->execute();
+
+$requete = $pdo->prepare("select * from activity_sector");
+
+$requete->execute();
+
+$activity_sector = $requete->fetchAll();
 
 ?>
 
     <!-- formulaire en alpha pour test -->
-
+<section>
     <h2 class="form-title">Sign In</h2>
 
     <form class="formulaire-creation" action="actions/insertSubscription.php" method="post">
@@ -54,9 +71,15 @@ include "information.php";
 
         <div class="div-input-label">
             <label for="activity_sector">Secteur d'activité : </label>
-            <select type="text" name="activity_sector" id="activity_sector">
-                <!-- TODO: Faire une boucle php forEach pour les options de secteur. -->
-                <option value="default">default</option>
+            <select name="activity_sector" id="activity_sector">
+                <option value="">Veuillez selectionner une option</option>
+                <?php
+                    foreach ($activity_sector_by_event as $acbe){
+                       ?>
+                        <option value="<?php echo $activity_sector[$acbe[1]]['name']?>"><?php echo $activity_sector[$acbe[1]]['name']?></option>
+                        <?php
+                    }
+                ?>
             </select>
         </div>
 
@@ -86,7 +109,13 @@ include "information.php";
         <input type="hidden" value="<?php echo $id?>" name="event_id">
         <input type="submit" value="Envoyer" class="btn-submit">
     </form>
+</section>
+<section class="container-section-event">
+    <div class="container-section-event">
+        <span> hey</span>
+    </div>
 
+</section>
 
 <?php
 include "footer.php";

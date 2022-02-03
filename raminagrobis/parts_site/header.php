@@ -26,7 +26,7 @@
 <header id="header">
     <div class="div-title-logo">
         <a href="index.php"><i class="fad fa-cat"></i></a>
-        <h1 class="title">Ramina Grobis</h1>
+        <h1 class="title">Raminagrobis™</h1>
     </div>
 
     <!-- Nav pour les différentes pages/ancres -->
