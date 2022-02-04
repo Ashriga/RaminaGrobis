@@ -48,5 +48,5 @@ $requete->bindParam(":event_id", $event_id);
 
 //execution de la requete
 $requete->execute();
-var_dump($event_id);
+
 header("location: ../index.php");

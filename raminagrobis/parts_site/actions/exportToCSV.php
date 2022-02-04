@@ -7,15 +7,7 @@ $requete = $pdo->prepare("select * from subscription");
 
 $requete->execute();
 
-$lines = $requete->fetchAll();
-
-$filename = 'event_subscription.csv';
-
-file_put_contents(
-    $filename,
-    $lines,
-    $flags = 0,
-    $context = null);
+$subscription = $requete->fetchAll();
 
 ?>
 

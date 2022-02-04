@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // création d'un titre de page
 $title = "Nos events";
@@ -26,7 +27,7 @@ $events = $requete->fetchAll();
             foreach ($events as $e){
         ?>
         <div class="container-card-event" ">
-            <div class="card-event" style="background-color: <?php echo $e['color']?>; opacity:0.7;">
+            <div class="card-event" style="background-color: <?php echo $e['color']?>55">
                 <h3 class="card-title-event"><?php echo $e['title'] ?></h3>
                 <div class="image-selected" >
                     <p><?php echo $e['description']?></p>

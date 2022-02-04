@@ -23,12 +23,31 @@ $activity_sector = $requete->fetchAll();
 
 <!-- Modifier le form pour que ce soit u qui crée un event. -->
 
-<h2 class="title-creation-form">Formulaire de création d'Évenement.</h2>
-<form class="formulaire-creation" action="actions/insertEventconfig.php" method="post">
 
+<h2 class="title-creation-form">Formulaire de création d'Évenement.</h2>
+
+<form class="formulaire-creation" action="actions/addImage.php" method="post" enctype="multipart/form-data">
     <div class="div-input-label">
-        <label for="img">Insérez une image :</label>
-        <input type="text" name="img" id="img">
+        <label for="file">Ajouter une photo</label>
+        <input type="file" name="file">
+        <input type="submit" value="OK">
+    </div>
+</form>
+<form class="formulaire-creation" action="actions/insertEventconfig.php" method="post">
+    <div class="div-input-label">
+        <label for="img">Selectionner une image :</label>
+        <select name="img" id="img">
+            <?php
+            $images = scandir("assets/image/background/");
+            foreach ($images as $img) {
+                if ($img != "." && $img != ".." && $img != ".DS_Store") {
+                    ?>
+                    <option value="<?php echo $img ?>"><?php echo $img ?></option>
+                    <?php
+                }
+            }
+            ?>
+        </select>
     </div>
 
     <div class="div-input-label">
@@ -54,7 +73,7 @@ $activity_sector = $requete->fetchAll();
             <?php
             foreach ($activity_sector as $as) {
                 ?>
-                <option value=<?php echo $as['id']?>><?php echo $as['name'] ?></option>
+                <option value=<?php echo $as['id'] ?>><?php echo $as['name'] ?></option>
                 <?php
             }
 

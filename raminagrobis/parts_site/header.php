@@ -11,15 +11,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/da7397688c.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-<?php 
+<?php
 # Variable qui vérifie le statut de l'utilisateur (admin ou user normal).
+session_start();
 
 ?>
 
@@ -32,7 +35,19 @@
     <!-- Nav pour les différentes pages/ancres -->
     <nav class="nav-header">
         <li class="list-header"><a id="btn-footer" class="link-list-header" href="#">Informations</a></li>
-        <li class="list-header"><a id="btn-connexion" class="link-list-header" href="#">Connexion</a></li>
+
+        <?php if ($_SESSION['admin'] == true) {
+            ?>
+
+            <li class="list-header"><a id="btn-connexion" class="link-list-header"
+                                       href="actions/admin-disconnect.php"</a>Déconnexion</a></li>
+            <?php
+        } else {
+            ?>
+            <li class="list-header"><a id="btn-connexion" class="link-list-header" href="#">Connexion</a></li>
+            <?php
+        }
+        ?>
     </nav>
 </header>
 

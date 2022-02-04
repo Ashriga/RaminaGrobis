@@ -1,9 +1,7 @@
-    <?php ?>
+</div>
 
-    </div>
+<script src="assets/javascript/app.js"></script>
 
-    <script src="assets/javascript/app.js"></script>
+</body>
 
-    </body>
-    
-    </html>
+</html>

@@ -157,6 +157,19 @@ header {
     border-bottom: solid 3px black;
 }
 
+.form-title-usr{
+    border-bottom: solid 3px black;
+    text-align: center;
+}
+
+.form-desc-usr{
+    text-align: center;
+    background-color: #dddddd99;
+    margin: auto;
+    border-collapse: collapse;
+    padding: 0 250px 0 250px;
+}
+
 .form-connexion {
     height: 50%;
     width: 80%;
@@ -395,4 +408,30 @@ header {
     text-align: center;
     text-decoration: underline rgb(48, 46, 46);
     color: rgba(28, 26, 145, 0.664);
+}
+
+/* --------- Table style -------- */
+#subscribers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#subscribers td, #subscribers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#subscribers tr:nth-child(even){background-color: darkgrey;}
+
+#subscribers tr:nth-child(odd){background-color: grey;}
+
+#subscribers tr:hover {background-color:dimgrey;}
+
+#subscribers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
 }

@@ -19,10 +19,9 @@ foreach ($_POST["activity_sector"] as $activity_sector) {
     $i++;
 }
 
-var_dump($activity_sector_tab);
 
 //recuperation du fichier de config qui contient toutes les infos de connexion a la base de donnee
-//TODO ajouter info de connexion dans la base de donnee (admin/admin)
+//connexion dans la base de donnee (admin/admin)
 include_once "../config.php";
 
 //initialisation de la connexion a la base de donnee
@@ -43,13 +42,12 @@ $requete->bindParam(":color", $color);
 //execution de la requete
 $requete->execute();
 
+//recuperation de l'id du dernier evenement créé
 $requete = $pdo->prepare("SELECT id FROM event WHERE id = (SELECT MAX(id) FROM event)");
 
 $requete->execute();
 
 $id_last_event = $requete->fetch();
-
-var_dump($id_last_event);
 
 foreach ($activity_sector_tab as $id_activity_sector)
 {

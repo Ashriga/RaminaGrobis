@@ -25,7 +25,9 @@ include "information.php";
 </section>
 
 <!-- Seulement si Admin -->
-
+<?php
+if ($_SESSION['admin'] == true){
+?>
 <section id="home-card" class="section-lp">
     <div class="container">
         <div class="container-card">
@@ -42,6 +44,6 @@ include "information.php";
 </section>
 
 <?php
-
+}
 include "footer.php";
 ?>

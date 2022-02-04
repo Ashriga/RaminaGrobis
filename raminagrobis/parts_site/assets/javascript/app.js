@@ -43,7 +43,6 @@ const listInputConnexionAdmin = document.getElementById(".input-connexion");
 btnConnexion.addEventListener("click", () => {
     // Fonction pour faire apparaitre le form de connexion
     homeHero.classList.add("hidden");
-    homeCard.classList.add("hidden");
 
     overlayConnexion.classList.remove("hidden");
     bgImage.style.padding = "0";
