@@ -82,7 +82,7 @@ $activity_sector = $requete->fetchAll();
         </select>
     </div>
     <div class="div-input-label">
-        <label for="form_title">Titre du formulaire : </label>
+        <label for="form_title">Message du bouton : </label>
         <input type="text" name="form_title" id="form_title">
         <!-- Faire une boucle php forEach pour les options de secteur. -->
     </div>

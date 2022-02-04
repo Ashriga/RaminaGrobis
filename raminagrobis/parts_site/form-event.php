@@ -35,24 +35,25 @@ $event = $requete->fetchAll();
 
 
 ?>
-<style>
-    .form-img{
-        background-image: url('assets/image/background/<?php echo $event[0]['img']?>');
-    }
-</style>
-
+    <style>
+        .form-img {
+            background-image: url('assets/image/background/<?php echo $event[0]['img']?>');
+        }
+    </style>
 
 
 <?php
 
-if ($_SESSION['admin'] != true){
+if ($_SESSION['admin'] != true) {
     ?>
     <!-- formulaire en alpha pour test -->
     <section>
         <div class="form-img">
             <h2 class="form-title-usr"><?php echo $event[0]['title'] ?></h2>
-            <p class="form-desc-usr"><?php echo $event[0]['description'] ?> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam assumenda autem beatae deserunt enim nostrum nulla tempore. Atque consectetur dolorem eaque eligendi harum odio qui similique veritatis voluptate voluptatibus!</span><span>A alias aliquid at consectetur corporis, cum delectus esse fugiat ipsa ipsam labore laudantium magni, necessitatibus neque nesciunt nostrum obcaecati omnis perferendis perspiciatis qui quis quo repellat saepe sapiente sed.</span><span>Ab amet, architecto, atque commodi deserunt fuga fugit hic incidunt libero officia praesentium provident quis suscipit. Consequuntur deserunt doloremque et quos recusandae. Deserunt dolor obcaecati, odio placeat provident rem saepe!</span><span>Accusamus amet architecto dolorum, error expedita facere, hic itaque libero modi natus neque odio officia pariatur quo vero voluptate voluptatibus. Amet autem cumque cupiditate doloremque ex expedita mollitia perferendis reprehenderit.</span><span>Alias, assumenda dicta dolores eius laboriosam molestias nam totam velit? Amet dicta dolorum esse facere, fugit impedit iusto officiis repellendus? Aperiam deserunt eligendi illo ipsam molestias natus reiciendis ut voluptate!</span></p>
-            <form class="formulaire-creation" style="background-color: <?php echo $event[0]['color']?>55"action="actions/insertSubscription.php" method="post">
+            <p class="form-desc-usr"><?php echo $event[0]['description'] ?> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam assumenda autem beatae deserunt enim nostrum nulla tempore. Atque consectetur dolorem eaque eligendi harum odio qui similique veritatis voluptate voluptatibus!</span><span>A alias aliquid at consectetur corporis, cum delectus esse fugiat ipsa ipsam labore laudantium magni, necessitatibus neque nesciunt nostrum obcaecati omnis perferendis perspiciatis qui quis quo repellat saepe sapiente sed.</span><span>Ab amet, architecto, atque commodi deserunt fuga fugit hic incidunt libero officia praesentium provident quis suscipit. Consequuntur deserunt doloremque et quos recusandae. Deserunt dolor obcaecati, odio placeat provident rem saepe!</span><span>Accusamus amet architecto dolorum, error expedita facere, hic itaque libero modi natus neque odio officia pariatur quo vero voluptate voluptatibus. Amet autem cumque cupiditate doloremque ex expedita mollitia perferendis reprehenderit.</span><span>Alias, assumenda dicta dolores eius laboriosam molestias nam totam velit? Amet dicta dolorum esse facere, fugit impedit iusto officiis repellendus? Aperiam deserunt eligendi illo ipsam molestias natus reiciendis ut voluptate!</span>
+            </p>
+            <form class="formulaire-creation" style="background-color: <?php echo $event[0]['color'] ?>55"
+                  action="actions/insertSubscription.php" method="post">
                 <div class="div-input-label">
                     <label for="sex">Civilité : </label>
                     <select type="text " name="sex" id="sex" required>
@@ -137,88 +138,92 @@ if ($_SESSION['admin'] != true){
             </form>
 
     </section>
-<!--Tableau des inscriptions-->
-<?php
+    <!--Tableau des inscriptions-->
+    <?php
 }
-    if ($_SESSION['admin'] == true){
-        //export csv
+if ($_SESSION['admin'] == true) {
+    //export csv
 
-        $date = new DateTime();
-        $time_stamp = $date->getTimestamp();
+    $date = new DateTime();
+    $time_stamp = $date->getTimestamp();
 
-        $filename = 'assets/files/event'.$id.'_subs_'.$time_stamp.'.csv';
+    $filename = 'assets/files/event' . $id . '_subs_' . $time_stamp . '.csv';
 
-        foreach ($subscription as $person) {
-            $i = 0;
-            while ($person[$i]) {
-                file_put_contents(
-                    $filename,
-                    $person[$i] . ',',
-                    $flags = FILE_APPEND,
-                    $context = null);
-                $i++;
-            }
+    foreach ($subscription as $person) {
+        $i = 0;
+        while ($person[$i]) {
             file_put_contents(
                 $filename,
-                '\n',
+                $person[$i] . ',',
                 $flags = FILE_APPEND,
                 $context = null);
-
+            $i++;
         }
-?>
+        file_put_contents(
+            $filename,
+            '\n',
+            $flags = FILE_APPEND,
+            $context = null);
+
+    }
+    ?>
     <section class="container-section-event">
 
         <div class="container-section-event">
-            <!--        ici - afficher les inscrits de l'event-->
-            <table id="subscribers">
-                <tr>
-                    <td>Civilité</td>
-                    <td>Nom</td>
-                    <td>Prénom</td>
-                    <td>Adresse email</td>
-                    <td>Nombre d'accompagnants</td>
-                    <td>Numéro de téléphone portable</td>
-                    <td>Numéro de téléphone fixe</td>
-                    <td>Est un professionel</td>
-                    <td>Secteur d'activité</td>
-                    <td>Nom de l'entreprise</td>
-                    <td>Métier</td>
-                    <td>Souhaite s'abonner à la newsletter</td>
-                    <td>Consent au partage de ses données</td>
-                </tr>
-                <?php
-                foreach ($subscription as $subscriptor) {
-                    ?>
+            <div id="table_resp">
+                <!--        ici - afficher les inscrits de l'event-->
+                <table id="subscribers">
                     <tr>
-                        <td><?php echo $subscriptor['sex'] ?></td>
-                        <td><?php echo $subscriptor['last_name'] ?></td>
-                        <td><?php echo $subscriptor['first_name'] ?></td>
-                        <td><?php echo $subscriptor['email_adress'] ?></td>
-                        <td><?php echo $subscriptor['group_nb'] ?></td>
-                        <td><?php echo $subscriptor['mobile_num'] ?></td>
-                        <td><?php echo $subscriptor['fix_num'] ?></td>
-                        <td><?php echo $subscriptor['is_professional'] ?></td>
-                        <td><?php echo $subscriptor['activity_sector'] ?></td>
-                        <td><?php echo $subscriptor['company_name'] ?></td>
-                        <td><?php echo $subscriptor['job'] ?></td>
-                        <td><?php echo $subscriptor['newsletter'] ?></td>
-                        <td><?php echo $subscriptor['consent_data'] ?></td>
+                        <td>Civilité</td>
+                        <td>Nom</td>
+                        <td>Prénom</td>
+                        <td>Adresse email</td>
+                        <td>Nombre d'accompagnants</td>
+                        <td>Numéro de téléphone portable</td>
+                        <td>Numéro de téléphone fixe</td>
+                        <td>Est un professionel</td>
+                        <td>Secteur d'activité</td>
+                        <td>Nom de l'entreprise</td>
+                        <td>Métier</td>
+                        <td>Souhaite s'abonner à la newsletter</td>
+                        <td>Consent au partage de ses données</td>
+                        <td>ID de l'event</td>
+                        <td>Scoring</td>
                     </tr>
                     <?php
-                }
-                ?>
-                <tr><td><a href="<?php echo $filename ?>">Telecharger en .csv</a></td></tr>
-            </table>
-
+                    foreach ($subscription as $subscriptor) {
+                        ?>
+                        <tr>
+                            <td><?php echo $subscriptor['sex'] ?></td>
+                            <td><?php echo $subscriptor['last_name'] ?></td>
+                            <td><?php echo $subscriptor['first_name'] ?></td>
+                            <td><?php echo $subscriptor['email_adress'] ?></td>
+                            <td><?php echo $subscriptor['group_nb'] ?></td>
+                            <td><?php echo $subscriptor['mobile_num'] ?></td>
+                            <td><?php echo $subscriptor['fix_num'] ?></td>
+                            <td><?php echo $subscriptor['is_professional'] ?></td>
+                            <td><?php echo $subscriptor['activity_sector'] ?></td>
+                            <td><?php echo $subscriptor['company_name'] ?></td>
+                            <td><?php echo $subscriptor['job'] ?></td>
+                            <td><?php echo $subscriptor['newsletter'] ?></td>
+                            <td><?php echo $subscriptor['consent_data'] ?></td>
+                            <td><?php echo $subscriptor['event_id'] ?></td>
+                            <td><?php echo $subscriptor['scoring'] ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                    <tr>
+                        <td><a href="<?php echo $filename ?>">Telecharger en .csv</a></td>
+                    </tr>
+                </table>
+            </div>
         </div>
         </div>
     </section>
 
 
-
-
-
-        <?php
-        }
+    <?php
+}
 include "footer.php";
 ?>
